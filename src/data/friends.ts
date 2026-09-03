@@ -1,0 +1,1 @@
+export const friends = [{ name: "Tonga", days: 42, avatarId: "flora", status: "active" }, { name: "Andres", days: 37, avatarId: "milo", status: "active" }, { name: "Richie", days: 16, avatarId: "felix", status: "active" }, { name: "Mateo", days: 0, avatarId: "nico", status: "fallen" }] as const;

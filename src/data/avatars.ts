@@ -1,0 +1,4 @@
+export type AvatarAccessory = "leaf" | "hat" | "glasses" | "cowboy" | "captain" | "beanie" | "flower" | "headphones" | "bandana";
+export const AVATAR_IDS = ["flora", "milo", "felix", "franco", "clint", "otto", "bruno", "pierre", "nico"] as const;
+export type AvatarId = typeof AVATAR_IDS[number];
+export const avatars: Record<AvatarId, { id: AvatarId; name: string; accessory: AvatarAccessory }> = { flora: { id: "flora", name: "Flora", accessory: "leaf" }, milo: { id: "milo", name: "Milo", accessory: "hat" }, felix: { id: "felix", name: "Felix", accessory: "glasses" }, franco: { id: "franco", name: "Franco", accessory: "cowboy" }, clint: { id: "clint", name: "Clint", accessory: "captain" }, otto: { id: "otto", name: "Otto", accessory: "beanie" }, bruno: { id: "bruno", name: "Bruno", accessory: "flower" }, pierre: { id: "pierre", name: "Pierre", accessory: "headphones" }, nico: { id: "nico", name: "Nico", accessory: "bandana" } };
