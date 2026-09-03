@@ -32,6 +32,13 @@ export const metadata: Metadata = {
     title: "No Fapp — The Self-Control Challenge",
     description: siteCopy.description,
   },
+  icons: {
+    icon: [
+      { url: "/icons/banana-dark.png" },
+    ],
+    apple: "/icons/banana-dark.png",
+    shortcut: "/icons/banana-dark.png",
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

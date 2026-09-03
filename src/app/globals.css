@@ -141,27 +141,62 @@ h6,
 .story-device { position: relative; min-height: 560px; width: min(100%, 520px); margin-inline: auto; padding-inline: 12%; }
 .story-device > .floating-device { width: 78%; margin-inline: auto; }
 
-.spark { position: absolute; color: var(--primary); font-family: var(--font-display); font-size: 1.75rem; user-select: none; pointer-events: none; opacity: .85; }
-.spark-one { right: 17%; top: 8%; font-size: 2.2rem; }
-.spark-two { bottom: 13%; left: 5%; font-size: 1.1rem; letter-spacing: .2em; opacity: .75; }
-.spark-three { bottom: 8%; right: 6%; font-size: 1.7rem; }
+/* Modern organic irregular circle / blob backdrop */
+.organic-blob {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  border-radius: 60% 40% 55% 45% / 55% 45% 60% 40%;
+  background: radial-gradient(circle at 35% 35%, rgba(244, 114, 182, 0.22), rgba(88, 28, 56, 0.4) 65%, transparent 85%);
+  filter: blur(28px);
+  animation: organic-morph 16s ease-in-out infinite alternate;
+  opacity: 0.8;
+}
 
-.spark-checkin-1 { left: 4%; top: 16%; font-size: 2rem; }
-.spark-checkin-2 { right: 4%; top: 32%; font-size: 1.1rem; letter-spacing: .2em; opacity: .75; }
+@keyframes organic-morph {
+  0% {
+    border-radius: 60% 40% 55% 45% / 55% 45% 60% 40%;
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    border-radius: 45% 55% 40% 60% / 60% 40% 50% 50%;
+    transform: scale(1.06) rotate(60deg);
+  }
+  100% {
+    border-radius: 55% 45% 60% 40% / 40% 60% 45% 55%;
+    transform: scale(0.96) rotate(120deg);
+  }
+}
 
-.spark-audit-1 { right: 4%; bottom: 14%; font-size: 2.4rem; z-index: 12; }
-.spark-audit-2 { left: 4%; top: 18%; font-size: 1.1rem; letter-spacing: .2em; opacity: .75; z-index: 12; }
-
-.spark-friend-1 { left: 22%; top: 6%; font-size: 2rem; z-index: 4; }
-.spark-friend-2 { right: 14%; bottom: 10%; font-size: 1.1rem; letter-spacing: .2em; opacity: .75; z-index: 4; }
-.spark-friend-3 { right: 8%; top: 12%; font-size: 1.7rem; z-index: 4; }
+.organic-blob-hero {
+  inset: 5% 8% 8% 8%;
+}
+.organic-blob-checkin {
+  inset: 10% 12% 10% 12%;
+}
+.organic-blob-audit {
+  inset: 8% 8% 8% 8%;
+}
+.organic-blob-friends {
+  inset: 6% 6% 8% 6%;
+}
+.organic-blob-profile {
+  inset: 8% 12% 8% 12%;
+}
+.organic-blob-platforms {
+  inset: 8% 8% 8% 8%;
+}
+.organic-blob-final {
+  inset: 0% 10% 8% 10%;
+  background: radial-gradient(circle at 50% 40%, rgba(255, 255, 255, 0.25), rgba(75, 20, 45, 0.5) 70%, transparent 90%);
+}
 
 .rule-item { min-height: 240px; border-bottom: 1px solid var(--border); padding: 1.8rem 0; }.rule-item:not(:last-child) { border-right: 0; }.rule-item b { color: var(--primary); font-family: var(--font-display); font-size: 4rem; line-height: .8; }.rule-item h3 { margin-top: 2rem; font-family: var(--font-display); font-size: 1.5rem; text-transform: uppercase; }.rule-item p { max-width: 18rem; margin-top: .75rem; color: var(--muted); font-size: .9rem; line-height: 1.6; }
 @media (min-width: 768px) { .rule-item { padding: 2rem; border-bottom: 0; border-right: 1px solid var(--border); }.rule-item:first-child { padding-left: 0; }.rule-item:last-child { border-right: 0; } }
 .audit-stage .device-mockup { width: 100%; }
 .leader-stage .device-mockup { width: 100%; }
 .stats-type { position: absolute; left: 50%; display: flex; width: min(90vw, 1050px); transform: translateX(-50%); flex-direction: column; gap: .2rem; color: var(--foreground); font-family: var(--font-display); font-size: clamp(2.8rem, 7vw, 7.5rem); line-height: .8; text-transform: uppercase; opacity: .6; }.stats-type span:nth-child(1) { transform: translateX(-14%); }.stats-type span:nth-child(2) { transform: translateX(15%); color: var(--primary); }.stats-type span:nth-child(3) { transform: translateX(-10%); }.stats-type span:nth-child(4) { transform: translateX(18%); }
-.profile-stage .device-mockup { width: 100%; }.profile-mark { position: absolute; z-index: 4; color: var(--primary); font-family: var(--font-display); font-size: 2.2rem; }.mark-0 { left: 8%; top: 17%; }.mark-1 { right: 10%; top: 28%; font-size: 1.4rem; letter-spacing: .2em; }.mark-2 { left: 8%; bottom: 20%; font-size: 1.6rem; }.mark-3 { right: 5%; bottom: 18%; font-size: 1.4rem; letter-spacing: .2em; }
+.profile-stage .device-mockup { width: 100%; }
 .final-showcase .device-mockup {
   filter: drop-shadow(0 25px 25px rgba(35, 5, 15, 0.35));
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), filter 0.35s ease;
