@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { DM_Sans, Barriecito } from "next/font/google";
 import "./globals.css";
 import { siteCopy } from "@/content/copy";
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+import { getMetadataBase } from "@/lib/site";
 
 const barriecito = Barriecito({
   variable: "--font-barriecito-var",
@@ -19,7 +18,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: getMetadataBase(),
   title: "No Fapp — The Self-Control Challenge",
   description: siteCopy.description,
   openGraph: {
